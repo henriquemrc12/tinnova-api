@@ -1,0 +1,31 @@
+<div class="row m-0 p-0">
+    <div class="col-sm-12 text-center">
+        <img src="https://tinnova.com.br/wp-content/uploads/2021/05/logo_dark.png" width="250">
+        <h2>Sistema De Gerenciamento VendaCar</h2>
+        <hr>
+        <div class="d-inline-block" style="width: 300px;">
+            <h3>Cadastre-se ou Faça Login!</h3>
+            <form [formGroup]="formGroup" class="example-form">
+                <mat-form-field class="w-100" appearance="outline">
+                    <mat-label>Nome</mat-label>
+                    <input matInput placeholder="Ex. João Silva" formControlName="nome">
+                  </mat-form-field >
+                  <br>
+                <mat-form-field class="w-100" appearance="outline">
+                  <mat-label>E-mail</mat-label>
+                  <input matInput placeholder="Ex. email@email.com" formControlName="email">
+                </mat-form-field >
+                <br>
+                <mat-form-field class="w-100" appearance="outline">
+                    <mat-label>Senha</mat-label>
+                    <input type="password" matInput formControlName="senha">
+                  </mat-form-field>
+              
+              <button (click)="submitSignup()" [disabled]="formGroup.invalid" class="w-100" mat-raised-button color="primary">Cadastrar</button>
+              <br>
+              <br>
+              <button (click)="redirectToLogin()" class="w-100" mat-raised-button color="accent">Login</button>
+            </form>
+        </div>
+    </div>
+</div>

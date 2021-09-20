@@ -1,0 +1,37 @@
+<div>
+    <h3>{{isEdit ? 'Editar Veículo' : 'Cadastrar Veículo'}}</h3>
+    <hr>
+    <form [formGroup]="formGroup" class="example-form">
+        <mat-form-field class="w-100" appearance="outline">
+            <mat-label>Nome</mat-label>
+            <input matInput placeholder="Ex. Mobi" formControlName="nome">
+        </mat-form-field >
+        <br>
+        <mat-form-field class="w-100" appearance="outline">
+            <mat-label>Marca</mat-label>
+            <input matInput placeholder="Ex. Ford" formControlName="marca">
+        </mat-form-field >
+        <br>
+        <mat-form-field class="w-100" appearance="outline">
+            <mat-label>Ano</mat-label>
+            <input matInput placeholder="Ex. 2011" formControlName="ano">
+        </mat-form-field >
+        <br>
+        <h5>Vendido</h5>
+        <mat-slide-toggle formControlName="vendido">
+            {{formGroup.controls.vendido.value ? 'Sim' : 'Não'}}
+        </mat-slide-toggle>
+        <br>
+        <mat-form-field class="w-100" appearance="outline">
+            <mat-label>Descrição</mat-label>
+            <textarea matInput formControlName="descricao"></textarea>
+        </mat-form-field >
+        <hr>
+        <button [disabled]="formGroup.invalid" (click)="submit()" class="m-2" mat-raised-button color="accent">
+            Salvar
+        </button>
+        <button mat-dialog-close mat-raised-button color="primary">
+            Cancelar
+        </button>
+    </form>
+</div>
